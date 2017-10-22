@@ -24,6 +24,7 @@
   transition: 100ms ease-in-out;
 }
 
-.instruction_text p h4{
-  line-height: 0px;
+.instruction_text h4{
+  margin-top: 5px;
+  margin-bottom:3px;  
 }

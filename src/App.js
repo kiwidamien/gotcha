@@ -17,7 +17,7 @@ function Cell(props){
   return (
     <div className="gotcha_cell">
       <svg viewBox="0 0 70 70">
-        <circle cx="35" cy="35" r="25" fill={cellColor}/>
+        <circle cx="35" cy="35" r="25" fill={cellColor} stroke="rgb(84,84,84)"/>
       </svg>
     </div>
   );
