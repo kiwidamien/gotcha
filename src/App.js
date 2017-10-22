@@ -240,33 +240,36 @@ class App extends React.Component {
 
     return (
       <div>
-      <div className="game">
-        <TokenDropControlPanel
-          onClick={(c) => this.putTokenInCol(c)}/>
-        <div className="board-edge top-board"></div>
-        <div className="game-area">
-          <SliderControlPanel
-            shiftValues={[-2,-1]}
-            onClick={(r,n) => this.shiftRow(r,n)}
-            offset={current.offset}
-          />
-          <GotchaBoard
-            squares={current.squares}
-            offset={current.offset}
-            onClick={i => this.handleClick(i)}
-          />
-          <SliderControlPanel
-            shiftValues={[1,2]}
-            onClick={(r,n) => this.shiftRow(r,n)}
-            offset={current.offset}
-          />
-        </div>
-        <div className="board-edge bottom-board"></div>
-        </div>
         <div className="game-info">
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
+        <div className="game_container">
+          <div className="game">
+            <TokenDropControlPanel
+              onClick={(c) => this.putTokenInCol(c)}/>
+            <div className="board-edge top-board"></div>
+            <div className="game-area">
+              <SliderControlPanel
+                shiftValues={[-2,-1]}
+                onClick={(r,n) => this.shiftRow(r,n)}
+                offset={current.offset}
+              />
+              <GotchaBoard
+                squares={current.squares}
+                offset={current.offset}
+                onClick={i => this.handleClick(i)}
+              />
+              <SliderControlPanel
+                shiftValues={[1,2]}
+                onClick={(r,n) => this.shiftRow(r,n)}
+                offset={current.offset}
+              />
+            </div>
+            <div className="board-edge bottom-board"></div>
+            </div>
+        </div>
+
       </div>
     );
   }
