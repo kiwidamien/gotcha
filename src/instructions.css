@@ -1,0 +1,29 @@
+.instructions{
+  margin: 0 auto;
+  width: 900px;
+  padding-top: 20px;
+}
+
+.instruction_link{
+  background-color: blue;
+  color: white;
+  padding: 5px 20px 3px 20px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.instruction_text{
+  padding: 0px 5px 0px 5px;
+  background-color: #a2f4e7;
+  border: 4px solid blue;
+  border-radius: 4px;
+  max-height: 5000px;
+  overflow: hidden;
+  -webkit-transition: 100ms ease-in-out;
+  -moz-transition: 100ms ease-in-out;
+  -o-transition: 100ms ease-in-out;
+  transition: 100ms ease-in-out;
+}
+
+.instruction_text p h4{
+  line-height: 0px;
+}

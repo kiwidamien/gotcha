@@ -233,7 +233,7 @@ class App extends React.Component {
 
     let status;
     if (winner) {
-      status = "Winner: " + ((winner === RED) ? "Red" : "Yellow");
+      status = "Winner: " + winner;
     } else {
       status = "Next player: " + (this.state.redIsNext ? "Red" : "Yellow");
     }
@@ -241,7 +241,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="game-info">
-          <div>{status}</div>
+          <div>Move history / undo</div>
           <ol>{moves}</ol>
         </div>
         <div className="game_container">
@@ -267,6 +267,7 @@ class App extends React.Component {
               />
             </div>
             <div className="board-edge bottom-board"></div>
+            <div className="next_player">{status}</div>
             </div>
         </div>
 
@@ -326,13 +327,34 @@ function calculateWinner(squares, offset) {
   ];
 
   const innerSquares = squares;
+
+  // there can be draws in this game
+  // For some weird reason,
+  //    var numLines = {RED:0 , YELLOW: 0};
+  // fails!
+  var numLines = { 1: 0, 2: 0};
+
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (innerSquares[a] && innerSquares[a] === innerSquares[b] && innerSquares[a] === innerSquares[c]) {
-      return innerSquares[a];
+      numLines[innerSquares[a]] += 1;
     }
   }
-  return null;
+
+
+  if ((numLines[RED] === 0) && (numLines[YELLOW] === 0)) {
+    return null;
+  }
+
+  if ((numLines[RED] === 0) && (numLines[YELLOW] !== 0)) {
+    return "Yellow";
+  }
+
+  if ((numLines[RED] !== 0) && (numLines[YELLOW] === 0)) {
+    return "Red";
+  }
+
+  return "Draw";
 }
 
 export default App;

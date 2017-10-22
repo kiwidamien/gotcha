@@ -26,6 +26,10 @@ body {
   height: 70px;
   display: flex;
   justify-content: flex-start;
+  -webkit-transition: 150ms ease-in-out;
+  -moz-transition: 150ms ease-in-out;
+  -o-transition: 150ms ease-in-out;
+  transition: 150ms ease-in-out;
 }
 
 .gotcha_row .move-left{
@@ -83,17 +87,23 @@ body {
   font-size: 16pt;
 }
 
-.board-edge{
+.board-edge {
   background-color: blue;
   height: 30px;
   width :210px;
 }
-.top-board{
+.top-board {
   border-radius: 80px 80px 0px 0px;
 }
 
-.bottom-board{
+.bottom-board {
   border-radius: 0px 0px 80px 80px;
+}
+
+.next_player {
+  padding-top:80px;
+  font-size: 24pt;
+  color: white;
 }
 
 h1 {
