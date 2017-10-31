@@ -328,11 +328,7 @@ function calculateWinner(squares, offset) {
 
   const innerSquares = squares;
 
-  // there can be draws in this game
-  // For some weird reason,
-  //    var numLines = {RED:0 , YELLOW: 0};
-  // fails!
-  var numLines = { 1: 0, 2: 0};
+  var numLines = { [RED]: 0, [YELLOW]: 0};
 
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
